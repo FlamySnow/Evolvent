@@ -48,6 +48,13 @@ TEST(EvolventMethods, CurvatureRadius){
     ASSERT_ANY_THROW(e.curRadius(3.14159));
 }
 
+TEST(EvolventMethods, CurRadiusExceptions){
+    Program2::Evolvent e;
+    ASSERT_ANY_THROW(e.curRadius(0));
+    e.setR(0);
+    ASSERT_ANY_THROW(e.curRadius(3.14159));
+}
+
 int _tmain(int argc, char* argv[]){
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
