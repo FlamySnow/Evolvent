@@ -19,6 +19,10 @@ TEST(EvolventMethods, Setter){
     Program2::Evolvent e;
     e.setR(11.51);
     ASSERT_EQ(11.51, e.getR());
+}
+
+TEST(EvolventMethods, SetterException){
+    Program2::Evolvent e;
     ASSERT_ANY_THROW(e.setR(-567));
 }
 
@@ -42,9 +46,6 @@ TEST(EvolventMethods, ArcLength){
 TEST(EvolventMethods, CurvatureRadius){
     Program2::Evolvent e;
     ASSERT_DOUBLE_EQ(0.31831015504887655, e.curRadius(e.arcLength(3.14159)));
-    ASSERT_ANY_THROW(e.curRadius(0));
-    e.setR(0);
-    ASSERT_ANY_THROW(e.curRadius(3.14159));
 }
 
 TEST(EvolventMethods, CurRadiusExceptions){
