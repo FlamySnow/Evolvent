@@ -1,7 +1,6 @@
 #include "Evolvent/Evolvent.h"
 #include "gtest/gtest.h"
 
-
 TEST(EvolventConstructor, DefaultConstructor){
     Program2::Evolvent e;
     ASSERT_EQ(1, e.getR());
